@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useAdminStore } from '../../store/useAdminStore'
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts'
+import { Loader } from 'lucide-react'
 
 export default function Dashboard(){
   const { users, orders, fetchAll, loading } = useAdminStore()
@@ -8,6 +9,7 @@ export default function Dashboard(){
   const totalUsers = users.length
   const totalOrders = orders.length
   const revenue = orders.reduce((s,o)=>s+(o.total||0),0)
+  const currency = "$"
 
   const data = [
     { month: 'Jan', sales: 400 },
@@ -21,7 +23,7 @@ export default function Dashboard(){
   return (
     <div>
       <h2 className="text-2xl font-semibold mb-4">Tableau de bord</h2>
-      {loading && <div>Chargement...</div>}
+      {loading && <div><Loader color='var(--color-accent)' size={18}/>Chargement...</div>}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
         <div className="p-4 bg-white rounded shadow">
           <div className="text-sm text-gray-500">Utilisateurs</div>
@@ -33,7 +35,7 @@ export default function Dashboard(){
         </div>
         <div className="p-4 bg-white rounded shadow">
           <div className="text-sm text-gray-500">Chiffre d'affaires</div>
-          <div className="text-xl font-bold" style={{color:'var(--color-primary)'}}>€{revenue.toFixed(2)}</div>
+          <div className="text-xl font-bold" style={{color:'var(--color-primary)'}}>{currency}{revenue.toFixed(2)}</div>
         </div>
       </div>
 

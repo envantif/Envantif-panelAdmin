@@ -1,5 +1,5 @@
 Alcinor commentaires 
- VAMAYO - Admin Frontend (Vite + React + TypeScript)
+VAMAYO - Admin Frontend (Vite + React + TypeScript)
 
 Ce dépôt contient la partie administrateur de l'application marketplace VAMAYO.  
 Stack utilisée : Vite + React + TypeScript + TailwindCSS + FramerMotion + Zustand et Framer Motion.  

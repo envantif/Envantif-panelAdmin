@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useAdminStore } from '../../store/useAdminStore'
+import { Search, Loader } from 'lucide-react'
 
 export default function Products(){
   const { products, fetchAll, toggleProductActive, loading } = useAdminStore()
@@ -12,9 +13,9 @@ export default function Products(){
     <div>
       <h2 className="text-2xl font-semibold mb-4">Gestion des produits/services</h2>
       <div className="mb-4 flex gap-2">
-        <input value={query} onChange={e=>setQuery(e.target.value)} placeholder="Recherche..." className="p-2 border rounded w-full" />
+        <input value={query} onChange={e=>setQuery(e.target.value)} placeholder="Recherche..." {...<Search color='var(--color-accent)' size={18}/>} className="p-2 border rounded w-full" /> 
       </div>
-      {loading && <div>Chargement...</div>}
+      {loading && <div> <Loader color='var(--color-accent)' size={18}/>Chargement...</div>}
       <div className="bg-white rounded shadow overflow-x-auto" style={{color:'var(--color-primary)'}}>
         <table className="min-w-full">
           <thead className="text-left">

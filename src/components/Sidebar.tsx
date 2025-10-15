@@ -17,13 +17,13 @@ export default function Sidebar(){
   return (
     <aside className="w-64 min-h-screen border-r bg-white">
       <div className="p-4">
-        <div className="text-xl font-bold" style={{color:'var(--color-primary)'}}>VAMAYO</div>
-        <div className="text-xs text-gray-500">Administration</div>
+        <div className="text-xl font-bold" style={{color:'var(--color-primary)'}}>ZAYITI</div>
+        <div className="text-xs text-slate-900">Administration</div>
       </div>
       <nav className="p-2">
         {items.map(i=>(
           <Link key={i.to} to={i.to} className={
-            `flex items-center gap-3 p-3 rounded hover:bg-gray-100 ${loc.pathname===i.to ? 'bg-gray-100 font-semibold' : 'text-gray-700'}`
+            `flex items-center gap-3 p-3 rounded hover:bg-amber-400 ${loc.pathname===i.to ? 'bg-amber-400 font-semibold text-slate-900' : 'text-slate-900'}`
           }>
             {i.icon}
             <span>{i.label}</span>
