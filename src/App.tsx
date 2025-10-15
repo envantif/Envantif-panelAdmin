@@ -15,12 +15,12 @@ export default function App() {
       <Routes>
         <Route path='/' element={<Navigate to='/dashboard' replace />} />
         <Route path='/dashboard' element={<Dashboard />} />
-        <Route path='/users' />
+        <Route path='/users' element={<Users />}/>
         <Route path='/products' element={<Products />} />
-        <Route path='/orders'  />
-        <Route path='/payments'  />
-        <Route path='/stats'  />
-        <Route path='/notifications'  />
+        <Route path='/orders' element={<Orders />} />
+        <Route path='/payments' element={<Payments />} />
+        <Route path='/stats' element={<Stats />} />
+        <Route path='/notifications' element={<Notifications />} />
       </Routes>
     </Layout>
   )
