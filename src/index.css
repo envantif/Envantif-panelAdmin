@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom utilities */
+.font-raleway { font-family: 'Raleway', sans-serif; }
+
+:root {
+  --color-primary: #234C6A;
+  --color-accent: #FEB21A;
+}
+
+:root{--color-primary:#234C6A;--color-accent:#FEB21A}
