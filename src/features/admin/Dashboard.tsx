@@ -19,7 +19,7 @@ export default function Dashboard() {
   useEffect(() => {
     fetchAll();
   }, []);
-
+  
   const totalUsers = users.length;
   const totalOrders = orders.length;
   const revenue = orders.reduce((s, o) => s + (o.total_amount || 0), 0);
@@ -84,7 +84,6 @@ export default function Dashboard() {
             </span>
           </div>
         </motion.div>
-
         <motion.div
           whileHover={{ y: -10, x : -5 }}
           className="p-4 bg-white rounded-xl shadow text-center sm:text-left"
